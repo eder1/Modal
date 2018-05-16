@@ -1,0 +1,70 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.modal {
+    width: 100%;
+    background: rgb(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    animation: modal 4s 3s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#cerrar {
+    display: none;
+}
+
+#cerrar:checked + label,
+#cerrar:checked ~ .modal {
+    display: none;
+}
+
+#cerrar + label {
+    position: fixed;
+    color: #fff;
+    font-size: 25px;
+    z-index: 50;
+    background: darkred;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 10px;
+    cursor: pointer;
+
+    animation: modal 4s;
+    visibility: hidden;
+    opacity: 0;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+
+
+}
+
+@keyframes modal {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.contenido {
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    background: white;
+    border-radius: 10px;
+}
+
+img {
+    width: 80%;
+    height: 40%
+}
